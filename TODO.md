@@ -10,7 +10,7 @@ Cada item fica pronto com teste verde e commit próprio.
 
 ## Fase 1: Fundamentos
 
-### Semana 1: POO, polimorfismo e dynamic dispatch (teoria concluída)
+### Semana 1: POO, polimorfismo e dynamic dispatch ✅ concluída
 
 Foco: a JVM decide em tempo de execução qual código roda, sem `instanceof` e com design fail-closed.
 Nomes em inglês; entre parênteses, o nome original da tarefa.
@@ -21,12 +21,12 @@ Nomes em inglês; entre parênteses, o nome original da tarefa.
 - [x] `public abstract BigDecimal calculateIssuanceFee()` (`calcularTaxaExpedicao`); cada subclasse implementa o próprio cálculo
 - [x] `MunicipalProcessingService` (`TramitacaoService`) com `process(List<MunicipalProcess> processes)` (`processar`)
 - [x] O loop do serviço chama apenas `calculateIssuanceFee()` e `isDirectApprovalAllowed()`. Proibido `instanceof`: comportamento específico vira gancho polimórfico na base
-- [ ] Teste JUnit: subclasse `TreePruning` (`PodaArvore`) sem sobrescrever `isDirectApprovalAllowed()` deve retornar `false`
+- [x] Teste JUnit: subclasse `TreePruning` (`PodaArvore`) sem sobrescrever `isDirectApprovalAllowed()` deve retornar `false`
   - Sugestões além da tarefa:
-  - [ ] `TreePruning` passando pelo serviço cai em `pendingReview`
-  - [ ] Cenário misto: taxa total `105.00` (`isEqualByComparingTo`) e só o evento em `directlyApproved`
-  - [ ] `EventAuthorization` com público `0` lança `IllegalArgumentException`
-  - [ ] `EventAuthorization` no limite: 500 aprova direto; 501 ou bloqueio de rua não
+  - [x] `TreePruning` passando pelo serviço cai em `pendingReview`
+  - [x] Cenário misto: taxa total `105.00` (`isEqualByComparingTo`) e só o evento em `directlyApproved`
+  - [x] `EventAuthorization` com público `0` lança `IllegalArgumentException`
+  - [x] `EventAuthorization` no limite: 500 aprova direto; 501 ou bloqueio de rua não
 
 Ajustes no código já escrito:
 
@@ -40,7 +40,7 @@ Ajustes no código já escrito:
 - [x] Renomear `uuid` para `id`
 - [x] Sem espaço antes do parêntese
 - [x] Campos `final` em `MunicipalProcess`
-- [ ] `"PROT-" + this.id` sem `new String(...)`
+- [x] `"PROT-" + this.id` sem `new String(...)`
 - [x] `isDirectApprovalAllowed()` sem parâmetro: a condição vem do estado de `EventAuthorization`, não de uma `String` passada por quem chama
 
 > Semanas 2 a 9: sugestões minhas, ainda não conferidas com o seu roteiro. Substituir pelas tarefas originais de cada semana.
