@@ -51,10 +51,10 @@ Regra de ouro: nenhum cast (`(EventAuthorization) process`), nenhum raw type (`L
 
 Interfaces modernas:
 
-- [ ] Interface `Chargeable` em `municipalprocess/model` com `BigDecimal calculateIssuanceFee()`. `MunicipalProcess` passa a implementá-la, e a declaração abstrata sai da base (a interface já obriga as subclasses). Motivo (Item 20): algo cobrável que não é processo, como uma multa, pode implementá-la sem herdar de `MunicipalProcess`
-- [ ] `default boolean isFeeExempt()` em `Chargeable`: `true` quando a taxa é zero
-- [ ] `static BigDecimal sumFees(Collection<? extends Chargeable> items)` em `Chargeable`; o serviço passa a usá-lo para a taxa total
-- [ ] Método `private static` em `Chargeable` (Java 9+) que normaliza a escala monetária (2 casas, `RoundingMode.HALF_EVEN`), usado por `sumFees`. Lista vazia soma `0.00`, não `0`
+- [x] Interface `Chargeable` em `municipalprocess/model` com `BigDecimal calculateIssuanceFee()`. `MunicipalProcess` passa a implementá-la, e a declaração abstrata sai da base (a interface já obriga as subclasses). Motivo (Item 20): algo cobrável que não é processo, como uma multa, pode implementá-la sem herdar de `MunicipalProcess`
+- [x] `default boolean isFeeExempt()` em `Chargeable`: `true` quando a taxa é zero
+- [x] `static BigDecimal sumFees(Collection<? extends Chargeable> items)` em `Chargeable`; o serviço passa a usá-lo para a taxa total
+- [x] Método `private static` em `Chargeable` (Java 9+) que normaliza a escala monetária (2 casas, `RoundingMode.HALF_EVEN`), usado por `sumFees`. Lista vazia soma `0.00`, não `0`
 
 Generics e PECS:
 
