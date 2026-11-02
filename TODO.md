@@ -58,10 +58,10 @@ Interfaces modernas:
 
 Generics e PECS:
 
-- [ ] Experimento antes de mudar o serviço: passe para `process(...)` uma **variável** `List<EventAuthorization>` e anote o erro de compilação num comentário do teste. `List.of(...)` direto no argumento compila por inferência e esconde o problema
-- [ ] `process(...)` passa a receber `List<? extends MunicipalProcess>`, na interface e na implementação: o serviço só lê a lista (produtora → `extends`)
-- [ ] Método genérico `<T extends MunicipalProcess> List<T> filter(Collection<? extends T> processes, Predicate<? super T> criterion)` no serviço e na interface: devolve o mesmo subtipo que recebeu, e o critério só consome (consumidor → `super`)
-- [ ] Classe genérica `Registry<K, V>` num pacote `shared`:
+- [x] Experimento antes de mudar o serviço: passe para `process(...)` uma **variável** `List<EventAuthorization>` e anote o erro de compilação num comentário do teste. `List.of(...)` direto no argumento compila por inferência e esconde o problema
+- [x] `process(...)` passa a receber `List<? extends MunicipalProcess>`, na interface e na implementação: o serviço só lê a lista (produtora → `extends`)
+- [x] Método genérico `<T extends MunicipalProcess> List<T> filter(Collection<? extends T> processes, Predicate<? super T> criterion)` no serviço e na interface: devolve o mesmo subtipo que recebeu, e o critério só consome (consumidor → `super`)
+- [x] Classe genérica `Registry<K, V>` num pacote `shared`:
   - fábrica `static <K, V> Registry<K, V> of(Collection<? extends V> values, Function<? super V, ? extends K> keyExtractor)`
   - `Optional<V> find(K key)`
   - chave duplicada lança `IllegalArgumentException` com a chave na mensagem (`Collectors.toUnmodifiableMap` lança `IllegalStateException`, então trate antes)
